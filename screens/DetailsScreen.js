@@ -59,7 +59,7 @@ const DetailsScreen = ({navigation, route}) => {
             alignItems: 'flex-end',
           }}>
 
-          <Text style={{fontSize: 32, fontWeight: 'bold',color:'green'}}>Poppy</Text>
+          <Text style={{fontSize: 32, fontWeight: 'bold',color:'green'}}>{ plant.flower_name }</Text>
         </View>
         <View
           style={{
@@ -70,7 +70,7 @@ const DetailsScreen = ({navigation, route}) => {
             alignItems: 'center',
             marginBottom: 20,
           }}>
-          <Text style={{fontSize: 22, fontWeight: 'bold'}}>Papaver spp.</Text>
+          <Text style={{fontSize: 22, fontWeight: 'bold'}}>{ plant.botanical_name }</Text>
         </View>
 
 
@@ -84,7 +84,7 @@ const DetailsScreen = ({navigation, route}) => {
                 <Text style={style.borderBtnText}><Icon name='wb-sunny' size={28} /></Text>
               </View>
               <Text style={style.myText}>
-                Sun
+                {plant.sun_exposure ? plant.sun_exposure : "N/A"}
               </Text>
             </View>
           </View>
@@ -99,7 +99,22 @@ const DetailsScreen = ({navigation, route}) => {
                 <Text style={style.borderBtnText}><Icon name='local-florist' size={28} /></Text>
               </View>
               <Text style={style.myText}>
-                Perennial
+              {plant.plant_type ? plant.plant_type : "N/A"}
+              </Text>
+            </View>
+          </View>
+
+          <View style={style.IconStyle}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <View style={style.borderBtn}>
+                <Text style={style.borderBtnText}><Icon name='filter-alt' size={28} /></Text>
+              </View>
+              <Text style={style.myText}>
+              {plant.soil_ph ? plant.soil_ph : "N/A"}
               </Text>
             </View>
           </View>
@@ -114,7 +129,7 @@ const DetailsScreen = ({navigation, route}) => {
                 <Text style={style.borderBtnText}><Icon name='height' size={28} /></Text>
               </View>
               <Text style={style.myText}>
-                6-12 inches, 1-3 feet
+              {plant.height !== "" ? plant.height: "N/A"}
               </Text>
             </View>
           </View>
@@ -129,7 +144,7 @@ const DetailsScreen = ({navigation, route}) => {
                 <Text style={style.borderBtnText}><Icon name='swap-horiz' size={28} /></Text>
               </View>
               <Text style={style.myText}>
-                4-36 inches
+              {plant.width !== "" ? plant.width : "N/A"}
               </Text>
             </View>
           </View>
@@ -144,7 +159,7 @@ const DetailsScreen = ({navigation, route}) => {
                 <Text style={style.borderBtnText}><Icon name='color-lens' size={28} /></Text>
               </View>
               <Text style={style.myText}>
-                Blue, Red, Orange, Pink
+              {plant.flower_color !== "" ? plant.flower_color : "N/A"}
               </Text>
             </View>
           </View>
@@ -159,7 +174,7 @@ const DetailsScreen = ({navigation, route}) => {
                 <Text style={style.borderBtnText}><Icon name='access-time' size={28} /></Text>
               </View>
               <Text style={style.myText}>
-                Spring Bloom, Summer Bloom
+              {plant.bloom_time !== "" ? plant.bloom_time : "N/A"}
               </Text>
             </View>
           </View>
@@ -174,7 +189,7 @@ const DetailsScreen = ({navigation, route}) => {
                 <Text style={style.borderBtnText}><Icon name='device-thermostat' size={28} /></Text>
               </View>
               <Text style={style.myText}>
-                2, 3, 4, 5, 6, 7, 8
+              {plant.hardiness_zones ? plant.hardiness_zones : "N/A"}
               </Text>
             </View>
           </View>
@@ -192,7 +207,7 @@ const DetailsScreen = ({navigation, route}) => {
               marginTop: 10,
               marginBottom: 10,
             }}>
-            {plant.about}
+            {plant.special_features !== "" ? plant.special_features : "N/A"}
             
 
           </Text>
@@ -204,7 +219,7 @@ const DetailsScreen = ({navigation, route}) => {
               lineHeight: 22,
               marginBottom: 10,
             }}>
-            {plant.about}
+            {plant.plant_care !== "" ? plant.plant_care : "N/A"}
             
 
           </Text>

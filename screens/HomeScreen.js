@@ -91,7 +91,7 @@ const HomeScreen = ({navigation}) => {
                   : 'rgba(0,0,0,0.2) ',
               }}>
               <TouchableOpacity
-              onPress={() => { plant.like = !plant.like;settoggle(!toggle)}}
+              onPress={() => { plant.like = !plant.like; settoggle(!toggle)}}
               >
                 <Icon
                   name="favorite"
